@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Error! | Elections
+{% endblock %}
+
+{% block body %}
+<div class="ui inverted vertical center aligned segment">
+<div class="ui container">
+  <div class="ui large secondary inverted pointing menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <a class="item" href="/">Home</a>
+    {% if request.user.is_superuser %}
+    <a class="item" href="/count">Count</a>
+    <a class="item" href="/admin">Admin</a>
+    {% endif %}
+  </div>
+</div>
+</div>
+
+
+<div class="ui vertical stripe segment">
+  <div class="ui text container">
+    <h1 class="ui header">Oops!</h1>
+    <p>Seems that you've already voted once. If that's not the case please contact the teacher nearby.</p><br>
+    <p>If you have already voted, please <a href="/logout">logout</a>. </p>
+  </div>
+</div>
+
+{% endblock %}

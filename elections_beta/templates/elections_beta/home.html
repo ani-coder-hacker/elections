@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | Elections {% endblock %}
+
+
+{% block body %}
+<div class="ui inverted vertical masthead center aligned segment">
+
+  <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+      <a class="toc item">
+        <i class="sidebar icon"></i>
+      </a>
+      <a class="active item" href="/">Home</a>
+      {% if request.user.is_superuser %}
+      <a class="item" href="/count">Count</a>
+      <a class="item" href="/admin">Admin</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ui text container">
+    <h1 class="ui inverted header">
+      Elections
+    </h1>
+    <h2>Sardar Patel Vidyalaya</h2><br>
+    <div class="ui huge primary button"> <a href="#vote" style="color:white;">Get Started</a> <i class="down arrow icon" style="color:white;"></i></div>
+  </div>
+</div>
+
+
+
+<div class="ui vertical stripe segment" style="text-align:center;" id="vote">
+  <div class="ui text container">
+    <h3 class="ui header">Cast Your Vote!</h3>
+    <a class="ui large button" href="/login">Start</a>
+  </div>
+</div>
+
+
+{% endblock %}

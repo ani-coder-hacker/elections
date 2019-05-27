@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Results | Elections
+{% endblock %}
+
+{% block body %}
+
+<div class="ui inverted vertical masthead center aligned segment">
+
+  <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+      <a class="toc item">
+        <i class="sidebar icon"></i>
+      </a>
+      <a class="item" href="/">Home</a>
+      {% if request.user.is_superuser %}
+      <a class="active item" href="/count">Results</a>
+      <a class="item" href="/admin">Admin</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ui text container">
+    <h1 class="ui inverted header">
+      Results
+    </h1>
+  </div>
+</div>
+
+
+<div class="ui vertical stripe segment">
+  <div class="ui text container">
+    <table class="ui celled table">
+      <tr>
+        <th>Name</th>
+        <th>Votes</th>
+      </tr>
+      {% if can1 %}
+      <tr>
+        <td>{{ can1.can_name }}</td>
+        <td>{{ can1.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can2 %}
+      <tr>
+        <td>{{ can2.can_name }}</td>
+        <td>{{ can2.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can3 %}
+      <tr>
+        <td>{{ can3.can_name }}</td>
+        <td>{{ can3.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can4 %}
+      <tr>
+        <td>{{ can4.can_name }}</td>
+        <td>{{ can4.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can5 %}
+      <tr>
+        <td>{{ can5.can_name }}</td>
+        <td>{{ can5.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can6 %}
+      <tr>
+        <td>{{ can6.can_name }}</td>
+        <td>{{ can6.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can7 %}
+      <tr>
+        <td>{{ can7.can_name }}</td>
+        <td>{{ can7.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can8 %}
+      <tr>
+        <td>{{ can8.can_name }}</td>
+        <td>{{ can8.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can9 %}
+      <tr>
+        <td>{{ can9.can_name }}</td>
+        <td>{{ can9.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can10 %}
+      <tr>
+        <td>{{ can10.can_name }}</td>
+        <td>{{ can10.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can11 %}
+      <tr>
+        <td>{{ can11.can_name }}</td>
+        <td>{{ can11.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can12 %}
+      <tr>
+        <td>{{ can12.can_name }}</td>
+        <td>{{ can12.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can13 %}
+      <tr>
+        <td>{{ can13.can_name }}</td>
+        <td>{{ can13.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can14 %}
+      <tr>
+        <td>{{ can14.can_name }}</td>
+        <td>{{ can14.can_votes}}</td>
+      </tr>
+      {% endif %}
+      {% if can15 %}
+      <tr>
+        <td>{{ can15.can_name }}</td>
+        <td>{{ can15.can_votes}}</td>
+      </tr>
+      {% endif %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

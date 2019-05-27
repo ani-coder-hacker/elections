@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Vote | Elections
+{% endblock %}
+
+{% block body %}
+<div class="ui inverted vertical center aligned segment">
+<div class="ui container">
+  <div class="ui large secondary inverted pointing menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <a class="item" href="/">Home</a>
+    {% if request.user.is_superuser %}
+    <a class="item" href="/count">Count</a>
+    <a class="item" href="/admin">Admin</a>
+    {% endif %}
+  </div>
+</div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui text container">
+    <h1 class="ui header">Vote</h1>
+    <form method="post" name="form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" name="vote" onclick="return checkfunc()">Vote</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+   function checkfunc(){
+    var total = 0
+
+    var can1 = document.getElementById('id_can1');
+    if(can1){
+      if (can1.checked){
+        total += 1;
+      }
+    }
+
+    var can2 = document.getElementById('id_can2');
+    if(can2){
+      if (can2.checked){
+        total += 1;
+      }
+    }
+
+    var can3 = document.getElementById('id_can3');
+    if(can3){
+      if(can3.checked){
+        total += 1;
+      }
+    }
+
+    var can4 = document.getElementById('id_can4');
+    if(can4){
+      if(can4.checked){
+        total += 1;
+      }
+    }
+
+    var can5 = document.getElementById('id_can5');
+    if(can5){
+      if(can5.checked){
+        total += 1;
+      }
+    }
+
+    var can6 = document.getElementById('id_can6');
+    if(can6){
+      if(can6.checked){
+        total += 1;
+      }
+    }
+
+    var can7 = document.getElementById('id_can7');
+    if(can7){
+      if(can7.checked){
+        total += 1;
+      }
+    }
+
+    var can8 = document.getElementById('id_can8');
+    if(can8){
+      if(can8.checked){
+        total += 1;
+      }
+    }
+
+    var can9 = document.getElementById('id_can9');
+    if(can9){
+      if(can9.checked){
+        total += 1;
+      }
+    }
+
+    var can10 = document.getElementById('id_can10');
+    if(can10){
+      if(can10.checked){
+        total += 1;
+      }
+    }
+
+    var can11 = document.getElementById('id_can11');
+    if(can11){
+      if(can11.checked){
+        total += 1;
+      }
+    }
+
+    var can12 = document.getElementById('id_can12');
+    if(can12){
+      if(can12.checked){
+        total += 1;
+      }
+    }
+
+    var can13 = document.getElementById('id_can13');
+    if(can13){
+      if(can13.checked){
+        total += 1;
+      }
+    }
+
+    var can14 = document.getElementById('id_can14');
+    if(can14){
+      if(can14.checked){
+        total += 1;
+      }
+    }
+
+    var can15 = document.getElementById('id_can15');
+    if(can15){
+      if(can15.checked){
+        total += 1;
+      }
+    }
+    if(total!=6){
+      alert("Please select exactly 6 candidates.");
+      return false;
+    }
+  }
+</script>
+{% endblock %}
